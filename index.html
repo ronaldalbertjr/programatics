@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>
+HSW
+</title>
+<style>
+canvas 
+{
+    padding:0;
+    margin:auto;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+body 
+{
+    background-color: #191919;
+}    
+</style>    
+</head>
+<body> 
+<canvas id="ronald"width="700"height="500"style="border:1px solid BLACK;">
+</canvas>
+<script src="js/draw.js">
+</script>    
+<script src="js/click.js">
+</script>    
+<script>
+var c=document.getElementById("ronald");
+var r=c.getContext("2d");
+var mx;
+var my;
+var mdv;
+var lv=0;
+var x=100;
+var cr;
+var wr;
+var start;
+var current;    
+var elapsed;  
+var data=new Date();
+var imgmenu=new Image();
+var imgmenucontrol=new Image();
+var imgmenucreditos=new Image();
+var imgmenuhist=new Image();
+var imgmenujogar=new Image();    
+var imgman=new Image();
+var imgaula=new Image();
+var imgdia=new Image();
+var imgbusao=new Image();
+var imgquarto=new Image();
+var imgcamp=new Image();
+var imgdavid=new Image();
+var imgprof=new Image();  
+var imgquestn=new Image();
+var imgquestn1=new Image();
+var imgquestn2=new Image();
+var imgquestn3=new Image();
+var imgquestn4=new Image();
+var imgwin=new Image();
+var imgwins=new Image();
+var imglose=new Image();
+var imgloses=new Image();
+var imgcred=new Image();
+var imgcreds=new Image();
+var imghist=new Image();
+var imghists=new Image();
+var imgcont=new Image();
+var imgconts=new Image();    
+var audiomenu=new Audio();
+var audioaula=new Audio();
+var audioconta=new Audio();
+var audiodavid=new Audio();
+var audioquarto=new Audio();
+var audiocamp=new Audio();
+var audioclick=new Audio(); 
+var audioccamp=new Audio();     
+audiomenu.src="Audio/menus.mp3";
+audioaula.src="Audio/aulas.mp3";
+audioconta.src="Audio/contas.mp3";
+audiodavid.src="Audio/davids.mp3";  
+audioquarto.src="Audio/quartos.mp3";
+audiocamp.src="Audio/camps.mp3";  
+audioclick.src="Audio/clicks.mp3"; 
+audioccamp.src="Audio/campcontas.mp3";    
+imgquarto.src="Imagens/quarto.jpg";    
+imgmenu.src="Imagens/Menu.jpg";
+imgmenujogar.src="Imagens/Menu_Jogar.jpg";
+imgmenuhist.src="Imagens/Menu_Historia.jpg";
+imgmenucreditos.src="Imagens/Menu_Creditos.jpg";
+imgmenucontrol.src="Imagens/Menu_ComoJogar.jpg"    
+imgman.src="Imagens/Menino.png";
+imgaula.src="Imagens/aula.jpg";
+imgdia.src="Imagens/dialogo.png";
+imgbusao.src="Imagens/busao.jpg";
+imgcamp.src="Imagens/camp.jpg";
+imgdavid.src="Imagens/David.png"; 
+imgprof.src="Imagens/prof.png";
+imgquestn.src="Imagens/pergnorm.jpg";
+imgquestn1.src="Imagens/pergnorm1.jpg";
+imgquestn2.src="Imagens/pergnorm2.jpg";
+imgquestn3.src="Imagens/pergnorm3.jpg";
+imgquestn4.src="Imagens/pergnorm4.jpg";
+imgwin.src="Imagens/VcGanhou_Fundo_menor.jpg";
+imgwins.src="Imagens/VcGanhou_Maior_Fundo.jpg";
+imglose.src="Imagens/VcPerdeu_Fundo.jpg";
+imgloses.src="Imagens/VcPerdeu_Maior_Fundo.jpg";
+imgcred.src="Imagens/Creditos.jpg";
+imgcreds.src="Imagens/Creditos1.jpg";
+imgcont.src="Imagens/ComoJogar.jpg";
+imgconts.src="Imagens/ComoJogar1.jpg";
+imghist.src="Imagens/Historia.jpg";
+imghists.src="Imagens/Historia1.jpg";    
+audiomenu.loop=true;
+audioaula.loop=true;
+audioconta.loop=true;
+audiodavid.loop=true; 
+audioquarto.loop=true; 
+audiocamp.loop=true; 
+audioccamp.loop=true;    
+//------------------------------------------------------------------------------------------------------
+function mv(e)
+{
+    mx=e.offsetX;
+    my=e.offsetY;
+}
+function mu(e)
+{
+    mdv=true;
+}
+function ku(e)
+{
+    if(e.keyCode==13)
+    {
+        enter=true;
+    }
+}
+document.addEventListener("mousemove",mv);
+document.addEventListener("mouseup",mu);
+document.addEventListener("keyup",ku);    
+//----------------------------------------------------------------------------------------------------
+function time()
+{
+    current=(new Date()).getTime();
+    elapsed=Math.floor((current-start)/1000);
+}
+//----------------------------------------------------------------------------------------------------    
+function text(t,x,y)
+{
+    r.textAlign="center";
+    r.font="20px Arial";
+    r.fillStyle="BLACK";
+    r.fillText(t,x,y);    
+}
+//----------------------------------------------------------------------------------------------------    
+function loop()
+{
+    draw();
+    click();
+    setTimeout(loop,30);
+    
+}
+loop();    
+</script>    
+</body>    
+</html>
